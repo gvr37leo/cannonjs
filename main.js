@@ -12,7 +12,8 @@ var three = new Three(document.body)
 physicsworld.init()
 var cannonDebugRenderer = new THREE.CannonDebugRenderer(three.scene,physicsworld.world);
 
-physicsworld.generatePyramid(20)
+physicsworld.generatePyramid(5)
+physicsworld.addCar()
 
 // var fsxsphere = physicsworld.addSphere()
 // fsxsphere.position.set(0,30,0)
