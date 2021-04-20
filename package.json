@@ -6,7 +6,10 @@
   "dependencies": {
     "@types/cannon": "^0.1.5",
     "@types/three": "^0.127.1",
-    "express": "*"
+    "cannon-es": "^0.17.0",
+    "cannon-es-debugger": "^0.1.2",
+    "express": "*",
+    "three": "^0.127.0"
   },
   "devDependencies": {},
   "scripts": {
