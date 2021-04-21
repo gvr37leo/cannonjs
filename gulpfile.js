@@ -6,6 +6,7 @@ var source = require("vinyl-source-stream");
 var tsify = require("tsify");
 const rollup = require('rollup');
 const rollupTypescript = require('@rollup/plugin-typescript');
+var  nodeResolve =  require('@rollup/plugin-node-resolve').nodeResolve
 
 var tsProject = ts.createProject('tsconfig.json',{});
 
@@ -21,11 +22,12 @@ function transpile(cb) {
     rollup.rollup({
         input:'./src/main.ts',
         plugins:[
-            rollupTypescript()
+            rollupTypescript(),
+            nodeResolve(),
         ]
     }).then(bundle => {
         return bundle.write({
-            file: './dist/library.js',
+            file: './dist/bundle.js',
             format: 'umd',
             name: 'library',
             sourcemap: true

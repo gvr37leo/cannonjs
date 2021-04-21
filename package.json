@@ -6,7 +6,6 @@
   "dependencies": {
     "@rollup/plugin-typescript": "^8.2.1",
     "@types/cannon": "^0.1.5",
-    "@types/three": "^0.127.1",
     "cannon-es": "^0.17.0",
     "cannon-es-debugger": "^0.1.2",
     "del": "^6.0.0",
@@ -19,6 +18,8 @@
     "typescript": "^4.2.4"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@types/three": "^0.127.1",
     "browserify": "^17.0.0",
     "tsify": "^5.0.2",
     "vinyl-source-stream": "^2.0.0"
