@@ -1,10 +1,9 @@
 
 import * as CANNON from 'cannon-es'
-import cannonDebugger from 'cannon-es-debugger'
-import * as THREE from 'three'
+// import cannonDebugger from 'cannon-es-debugger'
+// import * as THREE from 'three'
 import {loop} from './utils'
-
-const scene = new THREE.Scene()
+// const scene = new THREE.Scene()
 const world = new CANNON.World()
 var cube = new CANNON.Body({
     shape:new CANNON.Box(new CANNON.Vec3(0.5,0.5,0.5)),
@@ -18,7 +17,7 @@ var plane = new CANNON.Body({
     mass:0,
 })
 world.addBody(plane)
-var cannonDebugRenderer = cannonDebugger(scene, world.bodies, {});
+// var cannonDebugRenderer = cannonDebugger(scene, world.bodies, {});
 
 loop()
 
