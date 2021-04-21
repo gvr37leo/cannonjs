@@ -1,4 +1,14 @@
-class Three{
+import * as THREE from 'three'
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js'
+
+
+export class ModelViewer{
+    scene: THREE.Scene
+    camera: THREE.PerspectiveCamera
+    renderer: THREE.WebGLRenderer
+    controls: any
+    element
+
 
     constructor(element){
         this.element = element
@@ -24,7 +34,7 @@ class Three{
         this.resize()
         this.element.appendChild(this.renderer.domElement);
 
-        this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         this.controls.target.copy(new THREE.Vector3(0,0,0));
         this.controls.update();
         
