@@ -8,6 +8,7 @@ import {ModelViewer} from './modelviewer'
 var mv = new ModelViewer(document.body)
 
 const world = new CANNON.World({
+    allowSleep:true,
     gravity:new CANNON.Vec3(0,-10,0)
 })
 var cube = new CANNON.Body({
@@ -26,10 +27,11 @@ world.addBody(plane)
 var cannonDebugRenderer = cannonDebugger(mv.scene, world.bodies, {});
 
 loop((dt) => {
+    dt = clamp(dt,1/200,1/20)
     world.step(dt)
     mv.render()
 })
 
-
-
-
+function clamp(val,min,max){
+    return Math.min(Math.max(min,val),max)
+}
